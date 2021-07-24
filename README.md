@@ -2,7 +2,7 @@
 
 One day of having fun with a Discord chatbot!
 
-<img src="https://github.com/RussellDash332/RussellBot332/blob/main/meme.png" alt="Meme" width="400"/>
+<img src="https://github.com/RussellDash332/RussellBot332/blob/main/meme.png" alt="Meme" width="500"/>
 
 ## Credits
 - [NeuralNine](https://www.youtube.com/watch?v=urlkrueSXpI)
