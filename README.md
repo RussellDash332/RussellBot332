@@ -2,8 +2,8 @@
 
 One day of having fun with a Discord chatbot!
 
-![Meme](https://github.com/RussellDash332/RussellBot332/blob/main/meme.png)
+<img src="https://github.com/RussellDash332/RussellBot332/blob/main/meme.png" alt="Meme" width="100"/>
 
-## Credits:
+## Credits
 - [NeuralNine](https://www.youtube.com/watch?v=urlkrueSXpI)
 - [NeuralIntents](https://github.com/NeuralNine/neuralintents)
