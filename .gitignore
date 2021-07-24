@@ -1,3 +1,4 @@
 .env
 *.pkl
+*.h5
 intents.json
