@@ -19,7 +19,7 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.startswith("$russell"):
+    if message.content.startswith("rs"):
         response = chatbot.request(message.content[7:])
         await message.channel.send(response)
 
