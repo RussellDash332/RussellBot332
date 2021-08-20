@@ -17,7 +17,7 @@ TOKEN = os.getenv('TOKEN')
 @client.event
 async def on_ready():
     await client.change_presence(
-        activity=discord.Game(name="rs help", type=3))
+        activity = discord.Game(name = "rs help", type = 3))
     print("Status is set!")
 
 @client.event
