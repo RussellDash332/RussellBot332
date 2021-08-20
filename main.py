@@ -16,8 +16,7 @@ TOKEN = os.getenv('TOKEN')
 
 @client.event
 async def on_ready():
-    await client.change_presence(
-        activity = discord.Game(name = "rs help", type = 3))
+    await client.change_presence(activity = discord.Game(name = "rs help", type = 3))
     print("Status is set!")
 
 @client.event
@@ -26,7 +25,7 @@ async def on_message(message):
         return
 
     if message.content == "rs help":
-        await message.channel.send("**Help!**\nType \"rs <sentence>\" to start chatting!\nExample: rs Hello, how are you?")
+        await message.channel.send("**HELP!**\nType \"rs <sentence>\" to start chatting with me!\nExample:\n```rs Hello, how are you?```")
     elif message.content.startswith("rs"):
         response = chatbot.request(message.content[3:])
         await message.channel.send(response)
