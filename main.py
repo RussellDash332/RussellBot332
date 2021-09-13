@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 from neuralintents import GenericAssistant
 
-chatbot = GenericAssistant('intents.json')
+chatbot = GenericAssistant('intents.json.example')
 chatbot.train_model()
 chatbot.save_model()
 
