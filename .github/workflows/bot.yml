@@ -1,0 +1,37 @@
+name: Setting RussellBot332
+
+on:
+  push:
+    branches:
+      - main
+  #schedule:
+    #- cron: "* * * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo content
+        uses: actions/checkout@v2.3.4
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: pip cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      - name: Send sticker
+        run: |-
+          pip install -r requirements.txt
+          python -m venv ~/.venvs/discord
+          source ~/.venvs/discord/bin/activate
+          sudo /etc/init.d/screen-cleanup start
+          python main.py
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
+          CHAT: ${{ secrets.CHAT }}
