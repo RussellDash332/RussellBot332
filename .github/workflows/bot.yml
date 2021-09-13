@@ -25,7 +25,7 @@ jobs:
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
-      - name: Send sticker
+      - name: Run bot
         run: |-
           pip install -r requirements.txt
           python -m venv ~/.venvs/discord
@@ -34,4 +34,3 @@ jobs:
           python main.py
         env:
           TOKEN: ${{ secrets.TOKEN }}
-          CHAT: ${{ secrets.CHAT }}
