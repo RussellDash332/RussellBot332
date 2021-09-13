@@ -28,9 +28,6 @@ jobs:
       - name: Run bot
         run: |-
           pip install -r requirements.txt
-          python -m venv ~/.venvs/discord
-          source ~/.venvs/discord/bin/activate
-          sudo /etc/init.d/screen-cleanup start
           python main.py
         env:
           TOKEN: ${{ secrets.TOKEN }}
