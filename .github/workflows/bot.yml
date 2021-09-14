@@ -1,11 +1,11 @@
-name: Setting RussellBot332
+name: Refresh RussellBot332
 
 on:
   push:
     branches:
       - main
-  #schedule:
-    #- cron: "* * * * *"
+  schedule:
+    - cron: "0 */6 * * *"
 
 jobs:
   build:
