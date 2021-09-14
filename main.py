@@ -1,4 +1,5 @@
 import discord
+from random import *
 import os
 from dotenv import load_dotenv
 from neuralintents import GenericAssistant
@@ -26,6 +27,8 @@ async def on_message(message):
 
     if message.content == "rs help":
         await message.channel.send("**HELP!**\nType \"rs <sentence>\" to start chatting with me!\nExample:\n```rs Hello, how are you?```")
+    elif message.content == "rs xkcd":
+        await message.channel.send(f"https://xkcd.com/{randint(1, 2515)}/")
     elif message.content.startswith("rs"):
         response = chatbot.request(message.content[3:])
         await message.channel.send(response)
