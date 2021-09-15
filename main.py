@@ -3,7 +3,7 @@ from random import *
 import os
 from dotenv import load_dotenv
 from neuralintents import GenericAssistant
-from json import loads
+from json import loads, dump
 from urllib import request, parse
 
 def read_dp():
