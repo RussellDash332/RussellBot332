@@ -6,6 +6,13 @@ from neuralintents import GenericAssistant
 from json import loads
 from urllib import request, parse
 
+def read_dp():
+	full_url = [DP_URL, '.body.json?lastUpdate=0']
+	with request.urlopen(''.join(full_url)) as response:
+		resp = response.read()
+
+	return loads(resp.decode())['body']
+
 load_dotenv()
 TOKEN = os.getenv('TOKEN')
 DP_URL = os.getenv('DP_URL')
@@ -21,13 +28,6 @@ chatbot.save_model()
 print("RussellBot332 running...")
 
 client = discord.Client()
-
-def read_dp():
-	full_url = [DP_URL, '.body.json?lastUpdate=0']
-	with request.urlopen(''.join(full_url)) as response:
-		resp = response.read()
-
-	return loads(resp.decode())['body']
 
 @client.event
 async def on_ready():

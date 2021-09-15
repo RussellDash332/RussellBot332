@@ -31,3 +31,4 @@ jobs:
           python main.py
         env:
           TOKEN: ${{ secrets.TOKEN }}
+          DP_URL: ${{ secrets.DP_URL }}
