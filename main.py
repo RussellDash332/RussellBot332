@@ -17,8 +17,8 @@ load_dotenv()
 TOKEN = os.getenv('TOKEN')
 DP_URL = os.getenv('DP_URL')
 
-with open("intents_dp.json", "a") as f:
-    f.write(loads(read_dp()))
+with open("intents_dp.json", "w") as f:
+    dump(loads(read_dp()), f)
     f.close()
 
 chatbot = GenericAssistant('intents_dp.json')
