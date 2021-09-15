@@ -9,24 +9,9 @@
         "responses": ["Sad to see you go :(", "Talk to you later", "Goodbye!", "Nooooo :cry:", "Bye bye! :smiley:"],
         "context_set": ""
     },
-    {"tag": "joke",
-        "patterns": ["joke", "Jokes please", "Tell me a joke", "Any joke?", "I need a joke", "Entertain me", "Be my entertainer"],
-        "responses": ["I am just a chatbot. Not a clown, not the entire circus, not even the entire comedy industry. The end! :clown:", "What is a sea monster’s favorite snack? Ships and dip", "How do robots eat guacamole? With computer chips"],
-        "context_set": ""
-    },
     {"tag": "currently",
         "patterns": ["What are you doing at the moment?", "Wyd right now?", "What are you doing right now?", "Wyd rn?", "Wachu doin"],
         "responses": ["Me? Waiting for you to reply, of course!", "Nothing much. Just chillin' :sunglasses:"],
-        "context_set": ""
-    },
-    {"tag": "python",
-        "patterns": ["Coding", "code", "coding", "python", "python code"],
-        "responses": ["```python\ndef foo(x):\n    print(\"Hello World!\")\n```",
-            "```java\npublic class Test {\n    public static void main(String[] args) {\n        System.out.println(\"Wait this is not Python, so sorry\");\n    }\n}\n```",
-            "```python\nimport this, antigravity\n# antigravity will open https://xkcd.com/353/ for you!\n# But what does import this mean???\n```",
-            "```python\n# Let's open my GitHub so you can follow me!\nimport webbrowser\nwebbrowser.open(\"https://github.com/RussellDash332/\")\n```",
-            "```python\nimport pandas as np\nimport numpy as sns\nimport seaborn as tf\nimport tensorflow as plt\nimport matplotlib.pyplot as pd\n```"
-            ],
         "context_set": ""
     }
   ]

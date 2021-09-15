@@ -3,8 +3,18 @@ from random import *
 import os
 from dotenv import load_dotenv
 from neuralintents import GenericAssistant
+from json import loads
+from urllib import request, parse
 
-chatbot = GenericAssistant('intents_example.json')
+load_dotenv()
+TOKEN = os.getenv('TOKEN')
+DP_URL = os.getenv('DP_URL')
+
+with open("intents_dp.json", "a") as f:
+    f.write(loads(read_dp()))
+    f.close()
+
+chatbot = GenericAssistant('intents_dp.json')
 chatbot.train_model()
 chatbot.save_model()
 
@@ -12,8 +22,12 @@ print("RussellBot332 running...")
 
 client = discord.Client()
 
-load_dotenv()
-TOKEN = os.getenv('TOKEN')
+def read_dp():
+	full_url = [DP_URL, '.body.json?lastUpdate=0']
+	with request.urlopen(''.join(full_url)) as response:
+		resp = response.read()
+
+	return loads(resp.decode())['body']
 
 @client.event
 async def on_ready():
