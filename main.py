@@ -17,11 +17,16 @@ load_dotenv()
 TOKEN = os.getenv('TOKEN')
 DP_URL = os.getenv('DP_URL')
 
-with open("intents_dp.json", "w") as f:
-    dump(loads(read_dp()), f)
-    f.close()
+try:
+    with open("intents_dp.json", "w") as f:
+        dump(loads(read_dp()), f)
+        f.close()
+    chatbot = GenericAssistant('intents_dp.json')
+    game_name = "rs help"
+except:
+    chatbot = GenericAssistant('intents_lite.json')
+    game_name = "rs help (DP down)"
 
-chatbot = GenericAssistant('intents_dp.json')
 chatbot.train_model()
 chatbot.save_model()
 
@@ -31,7 +36,7 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
-    await client.change_presence(activity = discord.Game(name = "rs help", type = 3))
+    await client.change_presence(activity = discord.Game(name = game_name, type = 3))
     print("Status is set!")
 
 @client.event
